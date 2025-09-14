@@ -3,8 +3,6 @@ import { useState, useRef, useEffect } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { GallerySource } from "../../(main)/page"
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import type { Swiper as SwiperType } from 'swiper';
 
 const gallerySource: GallerySource[] = [

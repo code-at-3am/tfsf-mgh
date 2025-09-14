@@ -7,6 +7,8 @@ import bannersData from "@/data/banners.json" with {type: 'json'};
 import themesData from "@/data/temalar.json" with {type: 'json'};
 import { Banner } from "@/common/types";
 import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import Image from "next/image";
 
 export interface GallerySource {
@@ -31,7 +33,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="w-full flex justify-center mb-16 px-4">
-        <div className="relative max-w-4xl w-full">
+        <div className="relative max-w-7xl w-full">
           <SwiperComp banners={banners} />
         </div>
       </div>
@@ -39,7 +41,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {themes[0].tr.map((theme: any, i: number) => (
-            <div>
+            <div key={theme.klasor}>
               {/* <Image sizes="100vh" alt={banner.dosya} src={`/assets/banners/tr/${banner.dosya}`} /> */}
               <img alt={theme.dosya} src={`/assets/hikayeler/${theme.klasor}/${theme.gorseller[0].gorsel}`} style={{width: '100%'}} />
             </div>
@@ -102,7 +104,7 @@ function SwiperComp({ banners }: SwiperCompProps) {
       {banners && banners.map(banner => (
         <SwiperSlide key={banner.url} className="w-fit" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div className="flex justify-between">
-            <div className="flex justify-center px-4 grow">
+            <div className="flex justify-center grow">
               <img src={`/assets/banners/tr/${banner.dosya}`} />
             </div>
           </div>
