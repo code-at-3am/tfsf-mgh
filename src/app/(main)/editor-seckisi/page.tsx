@@ -1,35 +1,16 @@
-import List, { ListData } from "@/component/page/editor-seckisi/list";
+import { Hikaye } from "@/common/types";
+import hikayelerData from "@/data/editorsecimi.json" with {type: 'json'};
+import EditorSeckisi from "@/views/editor-seckisi";
+import { Metadata } from "next";
 
-interface PageProps {
-
+export const metadata: Metadata = {
+  title: "Editör Seçkisi - TFSF Memleketimden Görsel Hikayeler",
 }
 
-const items: ListData[] = [
-  {
-    image: 'https://mgh.tfsf.org.tr/tumhikayeler/06_gecmisten_gelen/12/ates_komur_ve_duman_1.jpg',
-    title: 'Ateş, Kömür ve Duman',
-    author: 'Ümmügülsüm GÜNEŞ',
-    association: 'MFD'
-  },
-  {
-    image: 'https://mgh.tfsf.org.tr/tumhikayeler/02_gokkusagi_hikayeleri/02/muamma_1.jpg',
-    title: 'Muamma',
-    author: 'Hatice ATAÇ',
-    association: 'MFD'
-  },
-  {
-    image: 'https://mgh.tfsf.org.tr/tumhikayeler/07_degisenlere_bakanlar/02/muze_carsi_1.jpg',
-    title: 'Müze Çarşı',
-    author: 'Fatma GÖKMEN',
-    association: 'FSK'
-  }
-]
-
-export default function Page({ }: PageProps) {
-
+export default function Page() {
+  const hikayeler = hikayelerData as Hikaye[]
   return (
-    <>
-      <List items={items} />
-    </>
+    <EditorSeckisi
+      hikayeler={hikayeler} />
   )
 }

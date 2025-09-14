@@ -21,11 +21,22 @@ export interface HikayeDetayLang {
     foto: string
     metin: string
   }[]
-  galeri:{
+  galeri: {
     big: string
     thumb: string
     fotografci: string
     ozgecmis: string
     yazi: string
   }[]
+}
+
+export interface Dernek {
+  id: number
+  adi: string
+  logo: string
+}
+
+export interface Banner {
+  dosya: string
+  url: string
 }

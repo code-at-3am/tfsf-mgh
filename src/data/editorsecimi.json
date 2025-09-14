@@ -1,0 +1,15 @@
+[
+        {"id":53, "adiTR":"Ateş, Kömür ve Duman", "adiEN": "Fire, Coal and Smoke", "tema": "06_gecmisten_gelen", "url":"ates-komur-ve-duman", "thumb":"ates_komur_ve_duman_1.jpg", "pg":"Ümmügülsüm GÜNEŞ - MFD", "folder": "12"},
+        {"id":11, "adiTR":"Muamma", "adiEN": "Riddle", "tema": "02_gokkusagi_hikayeleri", "url":"muamma", "thumb":"muamma_1.jpg", "pg":"Hatice ATAÇ - MFD", "folder": "02"},
+        {"id":57, "adiTR":"Müze Çarşı", "adiEN": "Museum Bazaar", "tema": "07_degisenlere_bakanlar", "url":"muze-carsi", "thumb":"muze_carsi_1.jpg", "pg":"Fatma GÖKMEN - FSK", "folder": "02"},
+        {"id":63, "adiTR":"Manda Yoksa Süt de Yok", "adiEN": "No Water Buffaloes, No Milk", "tema": "07_degisenlere_bakanlar", "url":"manda-yoksa-sut-de-yok", "thumb":"manda_yoksa_sutde_yok_1.jpg", "pg":"Sakine YILDIRAN - EFOD", "folder": "08"},
+        {"id":68, "adiTR":"Sümerbank'ın Çığlığı", "adiEN": "Sümerbank’s Cry", "tema": "07_degisenlere_bakanlar", "url":"sumerbankin-cigligi", "thumb":"sumerbankin_cigligi_1.jpg", "pg":"M.Turhan KESKİN - NAFOD", "folder": "13"},
+        {"id":22, "adiTR":"Portakal Kabuğunda Saklı Hayatlar", "adiEN": "Lives Hidden in Orange Peel", "tema": "04_kadinlar_vardir", "url":"portakal-kabugunda-sakli-hayatlar", "thumb":"portakal_kabugunda_sakli_hayatlar_1.jpg", "pg":"Sümeyra ÖZTİMUR - GAFSAD", "folder": "03"},
+        {"id":23, "adiTR":"Pazarın Modacısı", "adiEN": "Fashion Designer of the Market", "tema": "04_kadinlar_vardir", "url":"pazarin-modacisi", "thumb":"pazarin_modacisi_1.jpg", "pg":"Gülcihan EROL - BODFAD", "folder": "05"},
+        {"id":29, "adiTR":"Madam Megı", "adiEN": "Madam Megı", "tema": "04_kadinlar_vardir", "url":"madam-megi", "thumb":"madam_megi_1.jpg", "pg":"Ayten ALTUNİÇ - SAMFAD", "folder": "11"},
+        {"id":30, "adiTR":"Lastikçi Fatoş", "adiEN": "The Tire Repairer Fatoş ", "tema": "04_kadinlar_vardir", "url":"lastikci-fatos", "thumb":"lastikci_fatos_1.jpg", "pg":"Özlem DİLEK, Ali Rıza ASLAN - AFSAD", "folder": "12"},
+        {"id":16, "adiTR":"Sabri Şenevi Sineması", "adiEN": "Sabri Şenevi's Cinema", "tema": "03_sanatli_hayatlar", "url":"sabri-senevi-sinemasi", "thumb":"sabri_senevi_sinemasi_1.jpg", "pg":"Ahmet ALDEMİR,  Aynur KEÇE - YÜRÜÇEK", "folder": "05"},
+        {"id":71, "adiTR":"Sürgün", "adiEN": "Exile", "tema": "08_emek_hikayeleri", "url":"surgun", "thumb":"surgun_1.jpg", "pg":"Kamile KURT - KUFSAD", "folder": "04"},
+        {"id":43, "adiTR":"Melek", "adiEN": "Angel", "tema": "05_hayata_karisan_hikayeler", "url":"melek", "thumb":"melek_1.jpg", "pg":"Erdinç TABANCALI - DEFSAD", "folder": "09"},
+        {"id":4, "adiTR":"Kimsenin Hatırlamadığı Sessiz Bir Şarkı", "adiEN": "A Silent Song Nobody Knows", "tema": "01_topluluklara_bakan_hikayeler", "url":"kimsenin-hatirlamadigi-sessiz-bir-sarki", "thumb":"kimsenin_hatirlamadigi_sessiz_bir_sarki_1.jpg", "pg":"Nimet GÖNENÇ ÇINAROĞLU - UFAD", "folder": "04"}
+]

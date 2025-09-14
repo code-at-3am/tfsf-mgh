@@ -1,0 +1,301 @@
+[
+  {
+    "tr": [
+      {
+        "adi"     : "Topluluklara Bakan Hikayeler",
+        "klasor"  : "01_topluluklara_bakan_hikayeler",
+        "gorseller":[
+          { "gorsel": "01/thumb/siyah_kelebekler_1.jpg" },
+          { "gorsel": "02/thumb/boyozun_izmiri_1.jpg" },
+          { "gorsel": "03/thumb/4_148_1.jpg" },
+          { "gorsel": "04/thumb/kimsenin_hatirlamadigi_sessiz_bir_sarki_1.jpg" },
+          { "gorsel": "05/thumb/sabir_tasi_1.jpg" },
+          { "gorsel": "06/thumb/khkdan_kulturhaneye_1.jpg" },
+          { "gorsel": "07/thumb/nogay_cayi_1.jpg" },
+          { "gorsel": "08/thumb/kirimdan_uzakta_1.jpg" },
+          { "gorsel": "09/thumb/mahalle_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Gökkuşağı Hikayeleri",
+        "klasor"  : "02_gokkusagi_hikayeleri",
+        "gorseller":[
+          { "gorsel": "01/thumb/yedi_renk_1.jpg" },
+          { "gorsel": "02/thumb/muamma_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Sanatlı Hayatlar",
+        "klasor"  : "03_sanatli_hayatlar",
+        "gorseller":[
+          { "gorsel": "01/thumb/baslangic_parmaklar_1.jpg" },
+          { "gorsel": "02/thumb/cengiz_usta_ve_oglu_1.jpg" },
+          { "gorsel": "03/thumb/tayyip_bey_ile_kutsal_hanim_1.jpg" },
+          { "gorsel": "04/thumb/operadan_sonra_1.jpg" },
+          { "gorsel": "05/thumb/sabri_senevi_sinemasi_1.jpg" },
+          { "gorsel": "06/thumb/umarin_secimi_1.jpg" },
+          { "gorsel": "07/thumb/gecelere_ritim_tutanlar_1.jpg" },
+          { "gorsel": "08/thumb/hayatin_provasi_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Kadınlar Vardır",
+        "klasor"  : "04_kadinlar_vardir",
+        "gorseller":[
+          { "gorsel": "01/thumb/deve_giydiren_1.jpg" },
+          { "gorsel": "02/thumb/icimizden_biri_1.jpg" },
+          { "gorsel": "03/thumb/portakal_kabugunda_sakli_hayatlar_1.jpg" },
+          { "gorsel": "05/thumb/pazarin_modacisi_1.jpg" },
+          { "gorsel": "06/thumb/iki_teker_bir_hayat_1.jpg" },
+          { "gorsel": "07/thumb/son_kare_1.jpg" },
+          { "gorsel": "08/thumb/hayallere_ucuran_kadin_1.jpg" },
+          { "gorsel": "09/thumb/koy_doktoru_1.jpg" },
+          { "gorsel": "10/thumb/ese_abla_1.jpg" },
+          { "gorsel": "11/thumb/madam_megi_1.jpg" },
+          { "gorsel": "12/thumb/lastikci_fatos_1.jpg" },
+          { "gorsel": "13/thumb/frig_erguvanindan_gordionsa_1.jpg" },
+          { "gorsel": "14/thumb/dugun_yemekcisi_1.jpg" },
+          { "gorsel": "15/thumb/vazgecmeyenler_1.jpg" },
+          { "gorsel": "16/thumb/ask_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Hayata Karışan Hikayeler",
+        "klasor"  : "05_hayata_karisan_hikayeler",
+        "gorseller":[
+          { "gorsel": "01/thumb/direnis_1.jpg" },
+          { "gorsel": "02/thumb/balikci_ibrahim_2.jpg" },
+          { "gorsel": "03/thumb/oteki_yarin_1.jpg" },
+          { "gorsel": "04/thumb/bayramin_ocagi_1.jpg" },
+          { "gorsel": "05/thumb/mazinin_kalesi_1.jpg" },
+          { "gorsel": "06/thumb/iki_ara_bir_oda_1.jpg" },
+          { "gorsel": "07/thumb/denizde_ruzgarla_1.jpg" },
+          { "gorsel": "08/thumb/selim_ile_askar_1.jpg" },
+          { "gorsel": "09/thumb/melek_1.jpg" },
+          { "gorsel": "10/thumb/el_alemi_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Geçmişten Gelen",
+        "klasor"  : "06_gecmisten_gelen",
+        "gorseller":[
+          { "gorsel": "01/thumb/atolyeden_muzeye_1.jpg" },
+          { "gorsel": "02/thumb/bakirii_aydinliga_kavusturan_adam_1.jpg" },
+          { "gorsel": "03/thumb/kocabiyik_orhan_1.jpg" },
+          { "gorsel": "04/thumb/kaybolan_zamanlar_2.jpg" },
+          { "gorsel": "05/thumb/bir_kucuk_esnaf_1.jpg" },
+          { "gorsel": "06/thumb/sayadaki_yasamlar_1.jpg" },
+          { "gorsel": "07/thumb/bir_tornavida_bir_pense_1.jpg" },
+          { "gorsel": "08/thumb/osman_amcanin_iki_cebi_2.jpg" },
+          { "gorsel": "09/thumb/gulay_ustanin_demirle_dansi_1.jpg" },
+          { "gorsel": "10/thumb/kosan_1.jpg" },
+          { "gorsel": "11/thumb/sufi_1.jpg" },
+          { "gorsel": "12/thumb/ates_komur_ve_duman_1.jpg" },
+          { "gorsel": "13/thumb/bicagin_iki_yuzu_1.jpg"},
+          { "gorsel": "14/thumb/atla_yasamak_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Değişenlere Bakanlar",
+        "klasor"  : "07_degisenlere_bakanlar",
+        "gorseller":[
+          { "gorsel": "01/thumb/konur_no_8_1.jpg" },
+          { "gorsel": "02/thumb/muze_carsi_1.jpg" },
+          { "gorsel": "03/thumb/tas_firin_1.jpg" },
+          { "gorsel": "04/thumb/kaybolan_kaldirimlar_1.jpg" },
+          { "gorsel": "05/thumb/cevre_adami_1.jpg" },
+          { "gorsel": "06/thumb/hurdalik_gunlugu_1.jpg" },
+          { "gorsel": "07/thumb/bayramlarin_kentsel_donusumu_1.jpg" },
+          { "gorsel": "08/thumb/manda_yoksa_sutde_yok_1.jpg" },
+          { "gorsel": "09/thumb/bizim_sokak_1.jpg" },
+          { "gorsel": "10/thumb/attuda_2.jpg" },
+          { "gorsel": "11/thumb/isikli_golu_ve_insanlari_1.jpg" },
+          { "gorsel": "12/thumb/kazdaglarinin_terk_edilmis_kuleleri_1.jpg" },
+          { "gorsel": "13/thumb/sumerbankin_cigligi_1.jpg"}
+        ]
+      },
+      {
+        "adi"     : "Emek Hikayeleri",
+        "klasor"  : "08_emek_hikayeleri",
+        "gorseller":[
+          { "gorsel": "01/thumb/lagun_parmakliklari_1.jpg" },
+          { "gorsel": "02/thumb/dalyanin_bayrami_1.jpg" },
+          { "gorsel": "03/thumb/yuksekten_bakanlar_1.jpg" },
+          { "gorsel": "04/thumb/surgun_1.jpg" },
+          { "gorsel": "05/thumb/erkek_pazari_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Toprağın Sesi",
+        "klasor"  : "09_topragin_sesi",
+        "gorseller":[
+          { "gorsel": "01/thumb/atalik_tohum_1.jpg" },
+          { "gorsel": "02/thumb/surmelide_organik_tarim_1.jpg" },
+          { "gorsel": "03/thumb/dogaa_donus_1.jpg" },
+          { "gorsel": "04/thumb/evrenin_gocu_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Engelleri Aşmak",
+        "klasor"  : "10_engelleri_asmak",
+        "gorseller":[
+          { "gorsel": "01/thumb/hasan_1.jpg" },
+          { "gorsel": "02/thumb/oya_yasayacak_1.jpg" },
+          { "gorsel": "03/thumb/sonbahar_cicekleri_1.jpg" },
+          { "gorsel": "04/thumb/servet_ve_sudenin_dunyasi_1.jpg" },
+          { "gorsel": "05/thumb/yalniz_degilsiniz_1.jpg" },
+          { "gorsel": "06/thumb/perspektif_1.jpg" }
+        ]
+      }
+    ],
+    "en": [
+      {
+        "adi"     : "Stories That Look to The Communities",
+        "klasor"  : "01_topluluklara_bakan_hikayeler",
+        "gorseller":[
+          { "gorsel": "01/thumb/siyah_kelebekler_1.jpg" },
+          { "gorsel": "02/thumb/boyozun_izmiri_1.jpg" },
+          { "gorsel": "03/thumb/4_148_1.jpg" },
+          { "gorsel": "04/thumb/kimsenin_hatirlamadigi_sessiz_bir_sarki_1.jpg" },
+          { "gorsel": "05/thumb/sabir_tasi_1.jpg" },
+          { "gorsel": "06/thumb/khkdan_kulturhaneye_1.jpg" },
+          { "gorsel": "07/thumb/nogay_cayi_1.jpg" },
+          { "gorsel": "08/thumb/kirimdan_uzakta_1.jpg" },
+          { "gorsel": "09/thumb/mahalle_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Rainbow Stories",
+        "klasor"  : "02_gokkusagi_hikayeleri",
+        "gorseller":[
+          { "gorsel": "01/thumb/yedi_renk_1.jpg" },
+          { "gorsel": "02/thumb/muamma_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Lives With Art",
+        "klasor"  : "03_sanatli_hayatlar",
+        "gorseller":[
+          { "gorsel": "01/thumb/baslangic_parmaklar_1.jpg" },
+          { "gorsel": "02/thumb/cengiz_usta_ve_oglu_1.jpg" },
+          { "gorsel": "03/thumb/tayyip_bey_ile_kutsal_hanim_1.jpg" },
+          { "gorsel": "04/thumb/operadan_sonra_1.jpg" },
+          { "gorsel": "05/thumb/sabri_senevi_sinemasi_1.jpg" },
+          { "gorsel": "06/thumb/umarin_secimi_1.jpg" },
+          { "gorsel": "07/thumb/gecelere_ritim_tutanlar_1.jpg" },
+          { "gorsel": "08/thumb/hayatin_provasi_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Women Do Exist",
+        "klasor"  : "04_kadinlar_vardir",
+        "gorseller":[
+          { "gorsel": "01/thumb/deve_giydiren_1.jpg" },
+          { "gorsel": "02/thumb/icimizden_biri_1.jpg" },
+          { "gorsel": "03/thumb/portakal_kabugunda_sakli_hayatlar_1.jpg" },
+          { "gorsel": "05/thumb/pazarin_modacisi_1.jpg" },
+          { "gorsel": "06/thumb/iki_teker_bir_hayat_1.jpg" },
+          { "gorsel": "07/thumb/son_kare_1.jpg" },
+          { "gorsel": "08/thumb/hayallere_ucuran_kadin_1.jpg" },
+          { "gorsel": "09/thumb/koy_doktoru_1.jpg" },
+          { "gorsel": "10/thumb/ese_abla_1.jpg" },
+          { "gorsel": "11/thumb/madam_megi_1.jpg" },
+          { "gorsel": "12/thumb/lastikci_fatos_1.jpg" },
+          { "gorsel": "13/thumb/frig_erguvanindan_gordionsa_1.jpg" },
+          { "gorsel": "14/thumb/dugun_yemekcisi_1.jpg" },
+          { "gorsel": "15/thumb/vazgecmeyenler_1.jpg" },
+          { "gorsel": "16/thumb/ask_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Stories Involved in Life",
+        "klasor"  : "05_hayata_karisan_hikayeler",
+        "gorseller":[
+          { "gorsel": "01/thumb/direnis_1.jpg" },
+          { "gorsel": "02/thumb/balikci_ibrahim_2.jpg" },
+          { "gorsel": "03/thumb/oteki_yarin_1.jpg" },
+          { "gorsel": "04/thumb/bayramin_ocagi_1.jpg" },
+          { "gorsel": "05/thumb/mazinin_kalesi_1.jpg" },
+          { "gorsel": "06/thumb/iki_ara_bir_oda_1.jpg" },
+          { "gorsel": "07/thumb/denizde_ruzgarla_1.jpg" },
+          { "gorsel": "08/thumb/selim_ile_askar_1.jpg" },
+          { "gorsel": "09/thumb/melek_1.jpg" },
+          { "gorsel": "10/thumb/el_alemi_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Coming From The Past",
+        "klasor"  : "06_gecmisten_gelen",
+        "gorseller":[
+          { "gorsel": "01/thumb/atolyeden_muzeye_1.jpg" },
+          { "gorsel": "02/thumb/bakirii_aydinliga_kavusturan_adam_1.jpg" },
+          { "gorsel": "03/thumb/kocabiyik_orhan_1.jpg" },
+          { "gorsel": "04/thumb/kaybolan_zamanlar_2.jpg" },
+          { "gorsel": "05/thumb/bir_kucuk_esnaf_1.jpg" },
+          { "gorsel": "06/thumb/sayadaki_yasamlar_1.jpg" },
+          { "gorsel": "07/thumb/bir_tornavida_bir_pense_1.jpg" },
+          { "gorsel": "08/thumb/osman_amcanin_iki_cebi_2.jpg" },
+          { "gorsel": "09/thumb/gulay_ustanin_demirle_dansi_1.jpg" },
+          { "gorsel": "10/thumb/kosan_1.jpg" },
+          { "gorsel": "11/thumb/sufi_1.jpg" },
+          { "gorsel": "12/thumb/ates_komur_ve_duman_1.jpg" },
+          { "gorsel": "13/thumb/bicagin_iki_yuzu_1.jpg"},
+          { "gorsel": "14/thumb/atla_yasamak_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Those Who Look to What Has Changed",
+        "klasor"  : "07_degisenlere_bakanlar",
+        "gorseller":[
+          { "gorsel": "01/thumb/konur_no_8_1.jpg" },
+          { "gorsel": "02/thumb/muze_carsi_1.jpg" },
+          { "gorsel": "03/thumb/tas_firin_1.jpg" },
+          { "gorsel": "04/thumb/kaybolan_kaldirimlar_1.jpg" },
+          { "gorsel": "05/thumb/cevre_adami_1.jpg" },
+          { "gorsel": "06/thumb/hurdalik_gunlugu_1.jpg" },
+          { "gorsel": "07/thumb/bayramlarin_kentsel_donusumu_1.jpg" },
+          { "gorsel": "08/thumb/manda_yoksa_sutde_yok_1.jpg" },
+          { "gorsel": "09/thumb/bizim_sokak_1.jpg" },
+          { "gorsel": "10/thumb/attuda_2.jpg" },
+          { "gorsel": "11/thumb/isikli_golu_ve_insanlari_1.jpg" },
+          { "gorsel": "12/thumb/kazdaglarinin_terk_edilmis_kuleleri_1.jpg" },
+          { "gorsel": "13/thumb/sumerbankin_cigligi_1.jpg"}
+        ]
+      },
+      {
+        "adi"     : "Labor Stories ",
+        "klasor"  : "08_emek_hikayeleri",
+        "gorseller":[
+          { "gorsel": "01/thumb/lagun_parmakliklari_1.jpg" },
+          { "gorsel": "02/thumb/dalyanin_bayrami_1.jpg" },
+          { "gorsel": "03/thumb/yuksekten_bakanlar_1.jpg" },
+          { "gorsel": "04/thumb/surgun_1.jpg" },
+          { "gorsel": "05/thumb/erkek_pazari_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Voice of the Earth",
+        "klasor"  : "09_topragin_sesi",
+        "gorseller":[
+          { "gorsel": "01/thumb/atalik_tohum_1.jpg" },
+          { "gorsel": "02/thumb/surmelide_organik_tarim_1.jpg" },
+          { "gorsel": "03/thumb/dogaa_donus_1.jpg" },
+          { "gorsel": "04/thumb/evrenin_gocu_1.jpg" }
+        ]
+      },
+      {
+        "adi"     : "Overcoming The Obstacles",
+        "klasor"  : "10_engelleri_asmak",
+        "gorseller":[
+          { "gorsel": "01/thumb/hasan_1.jpg" },
+          { "gorsel": "02/thumb/oya_yasayacak_1.jpg" },
+          { "gorsel": "03/thumb/sonbahar_cicekleri_1.jpg" },
+          { "gorsel": "04/thumb/servet_ve_sudenin_dunyasi_1.jpg" },
+          { "gorsel": "05/thumb/yalniz_degilsiniz_1.jpg" },
+          { "gorsel": "06/thumb/perspektif_1.jpg" }
+        ]
+      }
+
+      ]
+  }
+]

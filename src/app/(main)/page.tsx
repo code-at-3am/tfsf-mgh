@@ -1,5 +1,12 @@
-
-import PhotoGallery from "@/component/photo-gallery/photo-gallery";
+'use client'
+import { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+import bannersData from "@/data/banners.json" with {type: 'json'};
+import themesData from "@/data/temalar.json" with {type: 'json'};
+import { Banner } from "@/common/types";
+import 'swiper/css';
 import Image from "next/image";
 
 export interface GallerySource {
@@ -8,52 +15,99 @@ export interface GallerySource {
   photographer?: string
 }
 
-const gallerySource: GallerySource[] = [
-  {
-    src: 'https://mgh.tfsf.org.tr/tumhikayeler/02_gokkusagi_hikayeleri/02/muamma_5.jpg',
-    description: 'Muamma Futbol Takımı’nın da katıldığı, Queer Olimpik Organizasyonu coşkuyla kapanıyor. Organizasyon 8-12 Ağustos 2018 tarihlerinde İstanbul’da geçekleşmiş. Amaç, “her beden ve her cinsiyetin kendini rahat hissedeceği şekilde oyunları yeniden kurgulamak ve dışlayıcı oyun formlarını aşmak” şeklinde özetleniyor. Etkinliklere yurtiçinden ve dışından takımlar katılmış.',
-    photographer: 'Hatice ATAÇ'
-  },
-  {
-    src: 'https://mgh.tfsf.org.tr/tumhikayeler/02_gokkusagi_hikayeleri/02/muamma_6.jpg',
-    description: 'Aslı ve arkadaşları soyunma odasında maça hazırlanıyor. Muamma takımı oyuncuları cinsiyetsiz bir yaşamı savundukları için, cinsiyet beyanları farklı olsa da aynı soyunma odasını paylaşıyorlar.'
-  },
-  {
-    src: 'https://mgh.tfsf.org.tr/tumhikayeler/02_gokkusagi_hikayeleri/02/muamma_7.jpg',
-    description: ''
-  },
-  {
-    src: 'https://mgh.tfsf.org.tr/tumhikayeler/02_gokkusagi_hikayeleri/02/muamma_8.jpg',
-    description: ''
-  },
-  {
-    src: 'https://mgh.tfsf.org.tr/tumhikayeler/02_gokkusagi_hikayeleri/02/muamma_9.jpg',
-    description: ''
-  },
-  {
-    src: 'https://mgh.tfsf.org.tr/tumhikayeler/02_gokkusagi_hikayeleri/02/muamma_10.jpg',
-    description: ''
-  },
-  {
-    src: 'https://mgh.tfsf.org.tr/tumhikayeler/02_gokkusagi_hikayeleri/02/muamma_11.jpg',
-    description: ''
-  },
-  {
-    src: 'https://mgh.tfsf.org.tr/tumhikayeler/02_gokkusagi_hikayeleri/02/muamma_12.jpg',
-    description: ''
-  }
-]
-
 export default function Home() {
+
+  const [banners, setBanners] = useState<Banner[]>([])
+  const allBanners = bannersData as Banner[]
+  const themes = themesData as any[]
+  console.log('themes:', themes)
+
+  useEffect(() => {
+    const indexes = randomNumbers(10, allBanners.length)
+    const banners = indexes.map(index => allBanners[index])
+    setBanners(banners)
+  }, [])
+
   return (
-    <>
-      <div className="px-4 py-6">
-        <h1 className="text-3xl">Muamma</h1>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="w-full flex justify-center mb-16 px-4">
+        <div className="relative max-w-4xl w-full">
+          <SwiperComp banners={banners} />
+        </div>
       </div>
-      <PhotoGallery images={gallerySource} />
-      {/* <div className="flex justify-center">
-      <img src="https://mgh.tfsf.org.tr/tumhikayeler/02_gokkusagi_hikayeleri/02/muamma_13.jpg" />
-    </div> */}
-    </>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {themes[0].tr.map((theme: any, i: number) => (
+            <div>
+              {/* <Image sizes="100vh" alt={banner.dosya} src={`/assets/banners/tr/${banner.dosya}`} /> */}
+              <img alt={theme.dosya} src={`/assets/hikayeler/${theme.klasor}/${theme.gorseller[0].gorsel}`} style={{width: '100%'}} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+
   );
+}
+
+function randomNumbers(count: number, total: number) {
+  const arr: number[] = []
+  while (count > 0) {
+    const num = randomNumber(0, 85)
+    if (!arr.includes(num)) {
+      arr.push(num)
+      count--
+    }
+  }
+  return arr
+}
+
+function randomNumber(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min) + min)
+}
+
+interface SwiperCompProps {
+  banners: Banner[]
+}
+
+function SwiperComp({ banners }: SwiperCompProps) {
+
+  const swiperRef = useRef<SwiperType | null>(null)
+  return (
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      centeredSlides={true}
+      className="h-full"
+      navigation={true}
+      autoplay={{
+        delay: 3000,
+        pauseOnMouseEnter: true
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      onSwiper={(swiper) => {
+        swiperRef.current = swiper;
+        console.log(swiper);
+      }}
+      onSlideChange={(swiper) => {
+        // setActiveIndex(swiper.activeIndex)
+        console.log('slide change', swiper.activeIndex)
+      }}
+      modules={[Autoplay, Pagination, Navigation]}
+    >
+      {banners && banners.map(banner => (
+        <SwiperSlide key={banner.url} className="w-fit" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="flex justify-between">
+            <div className="flex justify-center px-4 grow">
+              <img src={`/assets/banners/tr/${banner.dosya}`} />
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  )
 }
