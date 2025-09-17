@@ -1,12 +1,12 @@
-import { Dernek } from "@/common/types"
+import { Dernek, Lang } from "@/common/types"
 import Image from "next/image"
-import Link from "next/link"
 
 interface DerneklerProps {
   dernekler: Dernek[]
+  lang: Lang
 }
 
-export default function Dernekler({ dernekler }: DerneklerProps) {
+export default function Dernekler({ dernekler, lang }: DerneklerProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -15,7 +15,8 @@ export default function Dernekler({ dernekler }: DerneklerProps) {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="text-center">
             <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text">
-              Katılımcı Dernekler
+              {lang == 'tr' && 'Katılımcı Dernekler'}
+              {lang == 'en' && 'Participant Associations'}
             </h1>
           </div>
         </div>
@@ -25,11 +26,6 @@ export default function Dernekler({ dernekler }: DerneklerProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {dernekler.map((data, i) => (
-            // <Link
-            //   href={``}
-            //   key={data.id}
-            //   className="group relative /*bg-white*/ rounded-lg /*shadow-sm hover:shadow-md*/ transition-all duration-500 overflow-hidden cursor-pointer transform"
-            // >
             <div key={data.id} className="group /*bg-white*/ rounded-lg transition-all duration-500 overflow-hidden transform">
               {/* Image Container */}
               <div className="p-4 rounded-lg shadow-sm hover:shadow-md bg-white">
@@ -52,20 +48,10 @@ export default function Dernekler({ dernekler }: DerneklerProps) {
                   {data.adi}
                 </h3>
               </div>
-              {/* </Link> */}
             </div>
           ))}
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400">
-            © 2025 MGH TFSF - Tüm hakları saklıdır
-          </p>
-        </div>
-      </footer>
     </div>
   )
 }

@@ -3,21 +3,20 @@ import Anasayfa from "@/views/anasayfa";
 import bannersData from "@/data/banners.json" with {type: 'json'};
 import themesData from "@/data/temalar.json" with {type: 'json'};
 
-interface HomeProps {
+interface HomepagePageProps {
   params: Promise<{ lang: Lang }>
 }
 
-export default async function Home({ params }: HomeProps) {
-
+export default async function HomepagePage({ params }: HomepagePageProps) {
+  
   const { lang } = await params
   const banners = bannersData as Banner[]
   const themes = themesData as TemaLang[]
 
   return (
     <Anasayfa
-      lang={'tr'}
+      lang={lang}
       banners={banners}
       themes={themes} />
   )
 }
-

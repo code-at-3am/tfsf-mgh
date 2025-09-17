@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
+import { Geist, Geist_Mono, Courgette } from "next/font/google";
+import "../../globals.css";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
+import { Lang } from "@/common/types";
+import { ReactNode } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +13,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const courgette = Courgette({
+  weight: "400",
+  variable: "--font-courgette",
   subsets: ["latin"],
 });
 
@@ -23,20 +31,26 @@ export const viewport: Viewport = {
   themeColor: '#fff'
 }
 
-export default function RootLayout({
+// export const LangContext = createContext({lang: 'tr'})
+
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode,
+  params: Promise<{ lang: Lang }>
 }>) {
+  const { lang } = await params
+
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${courgette.variable} antialiased`}
       >
-        <Header lang={'tr'} />
+        <Header lang={lang} />
         {children}
         <Footer />
       </body>
     </html>
-  );
+  )
 }

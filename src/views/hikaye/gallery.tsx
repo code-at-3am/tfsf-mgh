@@ -17,13 +17,6 @@ export default function Gallery({ hikayeDetay, onClose }: GalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const swiperRef = useRef<SwiperType | null>(null)
 
-  // useEffect(() => {
-  //   document.body.classList.add('fullscreen', 'overflow-hidden')
-  //   return () => {
-  //     document.body.classList.remove('fullscreen', 'overflow-hidden')
-  //   }
-  // }, [])
-
   useEffect(() => {
     if (isInfoActive) {
       const timer = setTimeout(() => {
@@ -47,7 +40,7 @@ export default function Gallery({ hikayeDetay, onClose }: GalleryProps) {
   return (
     <div className="/*fixed top-0 bottom-0 left-0 right-0 z-[999] w-full h-lvh*/ h-dvh max-h-dvh bg-gray-900 flex flex-col overflow-hidden">
       <div className="w-full flex justify-start sm:justify-center pr-16 sm:pr-0 border-b border-gray-950 h-[60px] relative">
-        <h1 className="text-white text-xl px-4 py-4 text-ellipsis whitespace-nowrap overflow-hidden">{hikayeDetay.tr[0].adi}</h1>
+        <h1 className="text-white text-xl px-4 py-4 text-ellipsis whitespace-nowrap overflow-hidden">{hikayeDetay.adi}</h1>
         <div className="absolute top-3 right-4">
           <button className="text-white rounded-full w-9 h-9 border-white flex justify-center items-center cursor-pointer hover:bg-gray-800" onClick={() => onClose()}>
             <svg xmlns="http://www.w3.org/2000/svg" width={28} height={28} viewBox="0 0 24 24">
@@ -73,7 +66,7 @@ export default function Gallery({ hikayeDetay, onClose }: GalleryProps) {
               console.log('slide change', swiper.activeIndex)
             }}
           >
-            {hikayeDetay?.tr[0]?.galeri && hikayeDetay.tr[0].galeri.map(image => (
+            {hikayeDetay?.galeri && hikayeDetay.galeri.map(image => (
               <SwiperSlide className="w-fit" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div className="flex justify-between">
                   <div className="flex justify-center px-4 grow">
@@ -87,10 +80,10 @@ export default function Gallery({ hikayeDetay, onClose }: GalleryProps) {
 
         <div className={`text-white flex flex-col justify-end transition-[width_min-width] duration-300 ${isInfoActive ? 'h-80 min-h-80 sm:w-80 sm:min-w-80' : 'w-0 min-w-0 h-0 min-h-0 overflow-hidden'}`}>
           <div className={`p-6 ${isContentVisible ? 'opacity-100 transition-opacity duration-200' : 'opacity-0'}`}>
-            <p className="mb-2 text-gray-300">{hikayeDetay.tr[0].adi}</p>
+            <p className="mb-2 text-gray-300">{hikayeDetay.adi}</p>
             <hr className="border-gray-800 mb-6" />
-            <p className="mb-4 text-[15px]">{hikayeDetay.tr[0].galeri[activeIndex]?.yazi || ''}</p>
-            <p className="text-[14px] text-gray-500">{hikayeDetay.tr[0].galeri[activeIndex]?.fotografci || ''}</p>
+            <p className="mb-4 text-[15px]">{hikayeDetay.galeri[activeIndex]?.yazi || ''}</p>
+            <p className="text-[14px] text-gray-500">{hikayeDetay.galeri[activeIndex]?.fotografci || ''}</p>
           </div>
         </div>
       </div>
@@ -108,7 +101,7 @@ export default function Gallery({ hikayeDetay, onClose }: GalleryProps) {
         </div>
         <div className="grow px-4">
           <div className="grow overflow-x-auto flex items-center justify-center h-full max-h-full py-1 px-2 gap-1">
-            {hikayeDetay?.tr[0]?.galeri && hikayeDetay.tr[0].galeri.map((image, i) => (
+            {hikayeDetay?.galeri && hikayeDetay.galeri.map((image, i) => (
               <div key={image.thumb} className={`flex h-full min-w-fit cursor-pointer ${activeIndex == i ? 'opacity-100 border-b-2 border-b-white' : 'opacity-60'} hover:opacity-100`} onClick={() => swiperRef.current?.slideTo(i)}>
                 <img src={`/assets/hikayeler/${image.big}`} className="h-[50px]" />
               </div>
@@ -118,7 +111,7 @@ export default function Gallery({ hikayeDetay, onClose }: GalleryProps) {
         <div className="flex items-center select-none">
           <div className="text-white mr-4 whitespace-nowrap">
             {(swiperRef.current?.activeIndex ?? 0) + 1}
-            <span className="text-gray-600"> / {hikayeDetay.tr[0].galeri.length}</span>
+            <span className="text-gray-600"> / {hikayeDetay.galeri.length}</span>
           </div>
           <div className="flex h-full gap-2">
             <button className="text-white rounded-full w-9 h-9 border-white flex justify-center items-center cursor-pointer hover:bg-gray-900" onClick={() => swipeSlide('prev')}>

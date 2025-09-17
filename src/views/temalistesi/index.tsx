@@ -1,13 +1,14 @@
-import { Hikaye, Lang } from "@/common/types"
+import { Hikaye, Lang, Tema } from "@/common/types"
 import Image from "next/image"
 import Link from "next/link"
 
-interface EditorSeckisiProps {
+interface TemaViewProps {
   hikayeler: Hikaye[]
   lang: Lang
+  title: string
 }
 
-export default function EditorSeckisi({ hikayeler, lang }: EditorSeckisiProps) {
+export default function TemaView({ hikayeler, lang, title }: TemaViewProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -16,8 +17,7 @@ export default function EditorSeckisi({ hikayeler, lang }: EditorSeckisiProps) {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="text-center">
             <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text">
-              {lang == 'tr' && 'Editör Seçkisi'}
-              {lang == 'en' && 'Editor Selection'}
+              {title}
             </h1>
           </div>
         </div>
@@ -26,20 +26,21 @@ export default function EditorSeckisi({ hikayeler, lang }: EditorSeckisiProps) {
       {/* Photo Gallery */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {hikayeler.map((data, i) => (
-
+          {hikayeler.map(hikaye => (
             <Link
-              href={`/${lang}/hikaye/${data.url}`}
-              key={data.id}
+              href={`/${lang}/hikaye/${hikaye.url}`}
+              key={hikaye.id}
               className="group relative /*bg-white*/ rounded-lg shadow-sm3 /*shadow-sm hover:shadow-md*/ transition-all duration-500 overflow-hidden cursor-pointer transform"
             >
               {/* Image Container */}
               <div className="relative aspect-[3/2] overflow-hidden rounded-lg">
                 <Image
                   fill
-                  src={`/assets/hikayeler/${data.tema}/${data.folder}/thumb/${data.thumb}`}
+                  priority
+                  sizes="100%"
+                  src={`/assets/hikayeler/${hikaye.tema}/${hikaye.folder}/thumb/${hikaye.thumb}`}
                   // @ts-ignore:next-line
-                  alt={data[`adi${lang.toUpperCase()}`]}
+                  alt={hikaye[`adi${lang.toUpperCase()}`]}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
@@ -51,11 +52,11 @@ export default function EditorSeckisi({ hikayeler, lang }: EditorSeckisiProps) {
               <div className="py-2">
                 <h3 className="font-medium text-gray-900 text-lg line-clamp-2 group-hover:text-black transition-colors">
                   {/* @ts-ignore:next-line */}
-                  {data[`adi${lang.toUpperCase()}`]}
+                  {hikaye[`adi${lang.toUpperCase()}`]}
                 </h3>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <span className="text-xs text-gray-500">{data.pg}</span>
+                    <span className="text-xs text-gray-500">{hikaye.pg}</span>
                   </div>
                 </div>
               </div>

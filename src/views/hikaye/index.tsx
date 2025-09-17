@@ -10,12 +10,11 @@ interface HikayeViewProps {
 }
 
 export default function HikayeView({ hikaye }: HikayeViewProps) {
-  console.log('HikayeView RENDER ***********')
+  console.log('HikayeView RENDER *********** hikaye', hikaye)
 
   const [fullscreen, setFullscreen] = useState(false)
   // const galleryRef = useRef<HTMLDivElement>(null)
   const handle = useFullScreenHandle()
-  const detay = hikaye.tr[0]
 
   useEffect(() => {
     // document.onfullscreenchange(() => {
@@ -63,7 +62,7 @@ export default function HikayeView({ hikaye }: HikayeViewProps) {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="text-center">
               <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text">
-                {detay.adi}
+                {hikaye.adi}
               </h1>
             </div>
           </div>
@@ -75,8 +74,8 @@ export default function HikayeView({ hikaye }: HikayeViewProps) {
             <Image
               width={840}
               height={560}
-              src={`/assets/hikayeler/${detay.galeri[0].big}`}
-              alt={detay.adi}
+              src={`/assets/hikayeler/${hikaye.galeri[0].big}`}
+              alt={hikaye.adi}
               className="w-full h-auto object-cover sm:rounded-lg shadow-lg"
             />
             <div onClick={handleFullScreen} className="group absolute bottom-0 left-0 right-0 px-4 h-full rounded-lg cursor-pointer transition-colors text-gray-400 bg-black/0 hover:bg-black/40 /*bg-gradient-to-b from-black/0 to-black/80*/ flex items-center justify-center">
@@ -91,20 +90,20 @@ export default function HikayeView({ hikaye }: HikayeViewProps) {
 
         {/* Description */}
         <div className="max-w-4xl mx-auto px-4 pb-8">
-          <div className="[&>p]:pb-4 text-gray-700 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: detay.metin }} />
+          <div className="[&>p]:pb-4 text-gray-700 text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: hikaye.metin }} />
         </div>
 
         {/* Photographer Info */}
-        {(detay.ozgecmisfoto || (detay.ozgecmis && detay.ozgecmis.length > 0)) && (
+        {(hikaye.ozgecmisfoto || (hikaye.ozgecmis && hikaye.ozgecmis.length > 0)) && (
           <div className="max-w-4xl mx-auto px-4 pb-16">
             <div className="bg-white rounded-lg shadow-md p-6">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Fotoğrafçı</h2>
               <div className="flex items-start space-x-4">
                 <div className="flex-1">
-                  {detay.ozgecmis && detay.ozgecmis.length > 0 && (
+                  {hikaye.ozgecmis && hikaye.ozgecmis.length > 0 && (
                     <>
-                      <h3 className="text-xl font-medium text-gray-900">{detay.ozgecmis[0].adi}</h3>
-                      <p className="text-gray-600 mt-1 leading-relaxed" dangerouslySetInnerHTML={{ __html: detay.ozgecmis[0].metin }}/>
+                      <h3 className="text-xl font-medium text-gray-900">{hikaye.ozgecmis[0].adi}</h3>
+                      <p className="text-gray-600 mt-1 leading-relaxed" dangerouslySetInnerHTML={{ __html: hikaye.ozgecmis[0].metin }}/>
                     </>
                   )}
                 </div>
@@ -112,16 +111,6 @@ export default function HikayeView({ hikaye }: HikayeViewProps) {
             </div>
           </div>
         )}
-
-        {/* Footer */}
-        <footer className="bg-gray-900 text-white py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-gray-400">
-              © 2025 MGH TFSF - Tüm hakları saklıdır
-            </p>
-          </div>
-        </footer>
-
       </div>
       {/* {fullscreen && (
         <div ref={galleryRef}>

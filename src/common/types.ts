@@ -9,10 +9,10 @@ export interface Hikaye {
   folder: string
 }
 
-export type HikayeLang = 'tr' | 'en'
-export type HikayeDetay = Record<HikayeLang, HikayeDetayLang[]>
+export type Lang = 'tr' | 'en'
+export type HikayeDetayLang = Record<Lang, HikayeDetay[]>
 
-export interface HikayeDetayLang {
+export interface HikayeDetay {
   adi: string
   metin: string
   ozgecmisfoto: string
@@ -40,3 +40,13 @@ export interface Banner {
   dosya: string
   url: string
 }
+
+export interface Tema {
+  adi: string
+  klasor: string
+  gorseller: {
+    gorsel: string
+  }[]
+}
+
+export type TemaLang = Record<Lang, Tema[]>

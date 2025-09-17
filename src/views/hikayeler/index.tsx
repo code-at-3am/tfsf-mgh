@@ -1,12 +1,13 @@
-import { Hikaye } from "@/common/types"
+import { Hikaye, Lang } from "@/common/types"
 import Image from "next/image"
 import Link from "next/link"
 
 interface HikayelerViewProps {
   hikayeler: Hikaye[]
+  lang: Lang
 }
 
-export default function HikayelerView({hikayeler}: HikayelerViewProps) {
+export default function HikayelerView({ hikayeler, lang }: HikayelerViewProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -15,7 +16,8 @@ export default function HikayelerView({hikayeler}: HikayelerViewProps) {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="text-center">
             <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text">
-              Fotoğraf Hikayeleri
+              {lang == 'tr' && 'Fotoğraf Hikayeleri'}
+              {lang == 'en' && 'Stories'}
             </h1>
           </div>
         </div>
@@ -27,7 +29,7 @@ export default function HikayelerView({hikayeler}: HikayelerViewProps) {
           {hikayeler.map((data, i) => (
 
             <Link
-              href={`/hikaye/${data.url}`}
+              href={`/${lang}/hikaye/${data.url}`}
               key={data.id}
               className="group relative /*bg-white*/ rounded-lg shadow-sm3 /*shadow-sm hover:shadow-md*/ transition-all duration-500 overflow-hidden cursor-pointer transform"
             // onClick={() => setSelectedPhoto(photo)}
@@ -37,7 +39,8 @@ export default function HikayelerView({hikayeler}: HikayelerViewProps) {
                 <Image
                   fill
                   src={`/assets/hikayeler/${data.tema}/${data.folder}/thumb/${data.thumb}`}
-                  alt={data.adiTR}
+                  // @ts-ignore:next-line
+                  alt={data[`adi${lang.toUpperCase()}`]}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
@@ -47,7 +50,8 @@ export default function HikayelerView({hikayeler}: HikayelerViewProps) {
                 {/* Hover Content */}
                 <div className="hidden absolute bottom-0 left-0 right-0 p-4 transform /*translate-y-full group-hover:translate-y-0*/ transition-transform duration-300">
                   <h3 className="text-white font-semibold text-lg mb-1 line-clamp-2">
-                    {data.adiTR}
+                    {/* @ts-ignore:next-line */}
+                    {data[`adi${lang.toUpperCase()}`]}
                   </h3>
                   <div className="flex items-center text-sm text-gray-200">
                     <span className="font-medium">
@@ -63,7 +67,8 @@ export default function HikayelerView({hikayeler}: HikayelerViewProps) {
               {/* Card Content */}
               <div className="py-2">
                 <h3 className="font-medium text-gray-900 text-lg line-clamp-2 group-hover:text-black transition-colors">
-                  {data.adiTR}
+                  {/* @ts-ignore:next-line */}
+                  {data[`adi${lang.toUpperCase()}`]}
                 </h3>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
@@ -84,15 +89,6 @@ export default function HikayelerView({hikayeler}: HikayelerViewProps) {
           ))}
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400">
-            © 2024 MGH TFSF - Tüm hakları saklıdır
-          </p>
-        </div>
-      </footer>
     </div>
   )
 }

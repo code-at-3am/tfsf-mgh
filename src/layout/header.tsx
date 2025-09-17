@@ -1,18 +1,105 @@
 'use client'
+import { Lang } from '@/common/types';
+import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import LogoPng from "@/layout/logo.png";
 
 interface HeaderProps {
-
+  lang: Lang
 }
 
-export default function Header({ }: HeaderProps) {
-  const [isOpen, setIsOpen] = useState(false);
+type MenuItems = {
+  title: string
+  href: string
+  active: (lang: Lang, pathname: string) => boolean
+}
 
+const MENU_ITEMS: Record<Lang, MenuItems[]> = {
+  tr: [
+    {
+      title: 'Anasayfa',
+      href: '/anasayfa',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/anasayfa`)
+    },
+    {
+      title: 'Editör Seçkisi',
+      href: '/editor-seckisi',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/editor-seckisi`)
+    },
+    {
+      title: 'Hikayeler',
+      href: '/hikayeler',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/hikaye`)
+    },
+    {
+      title: 'Katılımcı Dernekler',
+      href: '/katilimci-dernekler',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/katilimci-dernekler`)
+    },
+    {
+      title: 'Editörler',
+      href: '/editorler',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/editorler`)
+    },
+    {
+      title: 'Proje Hakkında',
+      href: '/proje-hakkinda',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/proje-hakkinda`)
+    },
+    {
+      title: 'İletişim',
+      href: '/iletisim',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/iletisim`)
+    }
+  ],
+  en: [
+    {
+      title: 'Homepage',
+      href: '/homepage',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/homepage`)
+    },
+    {
+      title: 'Editor Selection',
+      href: '/editorselection',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/editorselection`)
+    },
+    {
+      title: 'Stories',
+      href: '/stories',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/stories`)
+    },
+    {
+      title: 'Participant Associations',
+      href: '/participant-associations',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/participant-associations`)
+    },
+    {
+      title: 'Editors',
+      href: '/editors',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/editors`)
+    },
+    {
+      title: 'About Project',
+      href: '/about-project',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/about-project`)
+    },
+    {
+      title: 'Contact',
+      href: '/contact',
+      active: (lang: Lang, pathname: string) => pathname.startsWith(`/${lang}/contact`)
+    }
+  ]
+}
+
+
+
+
+
+export default function Header({ lang }: HeaderProps) {
+  const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-  const router = useRouter()
-  console.log('pathname: ', pathname)
 
   return (
     // <nav className="relative bg-gray-800 font-sans dark:bg-amber-400">
@@ -40,40 +127,21 @@ export default function Header({ }: HeaderProps) {
             </div>
             <div className="flex flex-1 items-center justify-between">
               <div className="flex shrink-0 items-center">
-                <img src="https://mgh.tfsf.org.tr/img/logo.png" alt="MGHSF Logo" className="h-12 w-auto" />
+                <Link href={'/'} className='flex'>
+                  <Image src={LogoPng} quality={'100'} alt="MGHSF Logo" className="h-12 w-auto" />
+                </Link>
                 {/* <img src="/logo2.png" alt="MGHSF Logo" className="h-12 w-auto" /> */}
               </div>
               <div className="hidden sm:block">
                 <div className="flex space-x-4">
-                  {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" --> */}
-                  {/* <a href="#" aria-current="page" className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Anasayfa</a> */}
-                  <MenuLink
-                    href='/'
-                    title="Anasayfa"
-                    active={pathname == '/'} />
-                  <MenuLink
-                    href='/editor-seckisi'
-                    title="Editör Seçkisi"
-                    active={pathname.startsWith('/editor-seckisi')} />
-                  <MenuLink
-                    href='/hikayeler'
-                    title="Hikayeler"
-                    active={pathname.startsWith('/hikaye')} />
-                  <MenuLink
-                    href='/katilimci-dernekler'
-                    title="Katılımcı Dernekler"
-                    active={pathname.startsWith('/katilimci-dernekler')} />
-                  <MenuLink
-                    href='/editorler'
-                    title="Editörler"
-                    active={pathname.startsWith('/editorler')} />
-                  <MenuLink
-                    href='/proje-hakkinda'
-                    title="Proje Hakkında"
-                    active={pathname.startsWith('/proje-hakkinda')} />
-                  <MenuLink
-                    href=''
-                    title="İletişim" />
+                  {MENU_ITEMS[lang].map(item => (
+                    <MenuLink
+                      key={item.href}
+                      href={`/${lang}${item.href}`}
+                      title={item.title}
+                      active={item.active(lang, pathname)} />
+                  ))}
+                  <LangComp lang={lang} />
                 </div>
               </div>
             </div>
@@ -95,47 +163,15 @@ export default function Header({ }: HeaderProps) {
             </button>
           </div>
           <div className="space-y-1 px-2 pt-2 pb-3">
-            {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" --> */}
-            {/* <a href="#" aria-current="page" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" onClick={() => setIsOpen(false)}>Dashboard</a>
-            <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white" onClick={() => setIsOpen(false)}>Team</a>
-            <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white" onClick={() => setIsOpen(false)}>Projects</a>
-            <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white" onClick={() => setIsOpen(false)}>Calendar</a> */}
-
-            <MobileMenuLink
-              href='/'
-              title="Anasayfa"
-              active={pathname == '/'}
-              onClick={() => setIsOpen(false)} />
-            <MobileMenuLink
-              href='/editor-seckisi'
-              title="Editör Seçkisi"
-              active={pathname.startsWith('/editor-seckisi')}
-              onClick={() => setIsOpen(false)} />
-            <MobileMenuLink
-              href='/hikayeler'
-              title="Hikayeler"
-              active={pathname.startsWith('/hikaye')}
-              onClick={() => setIsOpen(false)} />
-            <MobileMenuLink
-              href='/katilimci-dernekler'
-              title="Katılımcı Dernekler"
-              active={pathname.startsWith('/katilimci-dernekler')}
-              onClick={() => setIsOpen(false)} />
-            <MobileMenuLink
-              href='/editorler'
-              title="Editörler"
-              active={pathname.startsWith('/editorler')}
-              onClick={() => setIsOpen(false)} />
-            <MobileMenuLink
-              href='/proje-hakkinda'
-              title="Proje Hakkında"
-              active={pathname.startsWith('/proje-hakkinda')}
-              onClick={() => setIsOpen(false)} />
-            <MobileMenuLink
-              href=''
-              title="İletişim"
-              onClick={() => setIsOpen(false)} />
-
+            {MENU_ITEMS[lang].map(item => (
+              <MobileMenuLink
+                key={item.href}
+                href={`/${lang}${item.href}`}
+                title={item.title}
+                active={item.active(lang, pathname)}
+                onClick={() => setIsOpen(false)} />
+            ))}
+            <LangComp lang={lang} />
           </div>
         </div>
       </nav>
@@ -154,11 +190,30 @@ function MenuLink({ title, href, active }: MenuLinkProps) {
   return (
     <Link href={href} className={`${active ? 'bg-gray-900 text-white' : 'hover:bg-black/5 text-gray-600 hover:text-gray-800'} rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap`}>{title}</Link>
   )
+}
 
-
-} function MobileMenuLink({ title, href, active, onClick }: MenuLinkProps) {
+function MobileMenuLink({ title, href, active, onClick }: MenuLinkProps) {
   return (
     // "block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white
     <Link href={href} onNavigate={onClick} className={`${active ? 'bg-gray-900 text-white' : 'hover:bg-white/5 text-gray-300 hover:text-white'} block rounded-md px-3 py-2 text-base font-medium whitespace-nowrap`}>{title}</Link>
+  )
+}
+
+function LangComp({ lang }: { lang: Lang }) {
+  return (
+    <Link className="px-3 py-1 flex items-center hover:scale-110 transition-transform" href={`/${lang == 'tr' ? 'en' : 'tr'}/${lang == 'tr' ? 'homepage' : 'anasayfa'}`}>
+      {lang == 'tr' && (
+        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 64 64">
+          <circle cx={32} cy={32} r={30} fill="#ed4c5c"></circle>
+          <g fill="#fff">
+            <path d="m41.3 39l.1-5.4L36 32l5.4-1.6l-.1-5.4l3.3 4.3l5.4-1.6l-3.3 4.3l3.3 4.3l-5.4-1.6z"></path>
+            <path d="M33.2 44c-6.6 0-11.9-5.4-11.9-12s5.3-12 11.9-12c2.5 0 4.8.8 6.8 2.1C37.3 19 33.3 17 28.8 17C20.6 17 14 23.7 14 32s6.6 15 14.8 15c4.5 0 8.5-2 11.2-5.1c-1.9 1.3-4.2 2.1-6.8 2.1"></path>
+          </g>
+        </svg>
+      )}
+      {lang == 'en' && (
+        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 64 64"><path fill="#2a5f9e" d="M22 60.3V46.5l-10.3 7.6c2.9 2.7 6.4 4.8 10.3 6.2m20 0c3.9-1.4 7.4-3.5 10.3-6.2L42 46.4zM3.7 42c.3 1 .7 1.9 1.2 2.9L8.8 42zm51.5 0l3.9 2.9c.4-.9.8-1.9 1.2-2.9z"></path><path fill="#fff" d="M23.5 38H2.6c.3 1.4.7 2.7 1.1 4h5.1l-3.9 2.9c.8 1.7 1.7 3.2 2.8 4.7L18 42h4v2l-11.7 8.6l1.4 1.4L22 46.5v13.8c1.3.5 2.6.8 4 1.1V38zm37.9 0H38v23.4c1.4-.3 2.7-.7 4-1.1V46.5L52.3 54c1.4-1.3 2.6-2.7 3.8-4.2L45.4 42h6.8l6.1 4.5c.3-.5.6-1.1.8-1.6L55.2 42h5.1c.4-1.3.8-2.6 1.1-4"></path><path fill="#ed4c5c" d="M7.7 49.6c.8 1.1 1.6 2.1 2.5 3.1L22 44.1v-2h-4zM45.5 42l10.7 7.8c.4-.5.7-1 1.1-1.5c.1-.1.1-.2.2-.2c.3-.5.7-1.1 1-1.6L52.2 42z"></path><path fill="#2a5f9e" d="M42 3.7v13.8l10.3-7.6C49.4 7.2 45.9 5.1 42 3.7m-20 0c-3.9 1.4-7.4 3.5-10.3 6.2L22 17.6zM60.3 22c-.3-1-.7-1.9-1.2-2.9L55.2 22zM8.8 22l-3.9-2.9c-.4 1-.8 1.9-1.2 2.9z"></path><path fill="#fff" d="M40.5 26h20.8c-.3-1.4-.7-2.7-1.1-4h-5.1l3.9-2.9c-.8-1.7-1.7-3.2-2.8-4.7L46 22h-4v-2l11.7-8.6l-1.4-1.4L42 17.5V3.7c-1.3-.5-2.6-.8-4-1.1V26zM2.6 26H26V2.6c-1.4.3-2.7.7-4 1.1v13.8L11.7 10c-1.4 1.3-2.6 2.7-3.8 4.2L18.6 22h-6.8l-6.1-4.5c-.3.5-.6 1.1-.8 1.6L8.8 22H3.7c-.4 1.3-.8 2.6-1.1 4"></path><g fill="#ed4c5c"><path d="M56.3 14.4c-.8-1.1-1.6-2.1-2.5-3.1L42 19.9v2h4zM18.5 22L7.9 14.2c-.4.5-.7 1-1.1 1.5c-.1.1-.1.2-.2.2c-.3.5-.7 1.1-1 1.6l6.1 4.5z"></path><path d="M61.4 26H38V2.6Q35.15 2 32 2c-3.15 0-4.1.2-6 .6V26H2.6Q2 28.85 2 32c0 3.15.2 4.1.6 6H26v23.4q2.85.6 6 .6c3.15 0 4.1-.2 6-.6V38h23.4q.6-2.85.6-6c0-3.15-.2-4.1-.6-6"></path></g></svg>
+      )}
+    </Link>
   )
 }
