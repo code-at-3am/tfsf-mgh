@@ -31,14 +31,12 @@ export const viewport: Viewport = {
   themeColor: '#fff'
 }
 
-// export const LangContext = createContext({lang: 'tr'})
-
 export default async function RootLayout({
   children,
   params
 }: Readonly<{
   children: ReactNode,
-  params: Promise<{ lang: Lang }>
+  params: Promise<{ lang: string }>
 }>) {
   const { lang } = await params
 
@@ -47,7 +45,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${courgette.variable} antialiased`}
       >
-        <Header lang={lang} />
+        <Header lang={lang as Lang} />
         {children}
         <Footer />
       </body>

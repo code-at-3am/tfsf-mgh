@@ -10,17 +10,9 @@ interface HikayeViewProps {
 }
 
 export default function HikayeView({ hikaye }: HikayeViewProps) {
-  console.log('HikayeView RENDER *********** hikaye', hikaye)
 
   const [fullscreen, setFullscreen] = useState(false)
-  // const galleryRef = useRef<HTMLDivElement>(null)
   const handle = useFullScreenHandle()
-
-  useEffect(() => {
-    // document.onfullscreenchange(() => {
-    //   return null
-    // })
-  })
 
   function handleFullScreen() {
     console.log('handleFullScreen >>>>>>>>>>>>>>', handle)

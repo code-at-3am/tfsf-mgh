@@ -1,3 +1,4 @@
+import { Lang } from "@/common/types"
 import Editorler from "@/views/editorler"
 import { Metadata } from "next"
 
@@ -5,9 +6,19 @@ export const metadata: Metadata = {
   title: "Editors - MGH Project",
 }
 
-export default function Page() {
+interface PageProps {
+  params: Promise<{ lang: Lang }>
+}
 
+export async function generateStaticParams() {
+  return ['en'].map(lang => ({
+    lang: lang
+  }))
+}
+
+export default async function Page({ params }: PageProps) {
+  const { lang } = await params
   return (
-    <Editorler lang="en" />
+    <Editorler lang={lang} />
   )
 }

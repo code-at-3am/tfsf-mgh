@@ -12,19 +12,26 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function Page({ params }: PageProps ) {
-  const {lang, slug} = await params
+export default async function Page({ params }: PageProps) {
+  const { lang, slug } = await params
   const hikayeData = hikayeler.find(hikaye => hikaye.url == slug)
-  
+
   if (!hikayeData) {
     return null
   }
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/assets/hikayeler/${hikayeData.tema}/${hikayeData.folder}/hikaye.json`)
-  const data: HikayeDetayLang[] = await response.json()
-  const hikaye = data[0][lang][0]
+  try {
+    console.log(`${process.env.NEXT_PUBLIC_SITE_URL}/assets/hikayeler/${hikayeData.tema}/${hikayeData.folder}/hikaye.json`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/assets/hikayeler/${hikayeData.tema}/${hikayeData.folder}/hikaye.json`)
+    const data: HikayeDetayLang[] = await response.json()
+    const hikaye = data[0][lang][0]
+    return (
+      <HikayeView hikaye={hikaye} />
+    )
+  } catch (error) {
+    console.log('ERRON VAR BURDA ', error)
+  }
 
-  return (
-    <HikayeView hikaye={hikaye} />
-  )
+
+
 }
