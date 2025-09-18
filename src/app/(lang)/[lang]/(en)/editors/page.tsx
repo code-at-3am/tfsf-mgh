@@ -3,17 +3,11 @@ import Editorler from "@/views/editorler"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Editors - MGH Project",
+  title: "Editors",
 }
 
 interface PageProps {
   params: Promise<{ lang: Lang }>
-}
-
-export async function generateStaticParams() {
-  return ['en'].map(lang => ({
-    lang: lang
-  }))
 }
 
 export default async function Page({ params }: PageProps) {

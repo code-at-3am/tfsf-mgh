@@ -22,6 +22,7 @@ export default async function HikayelerPage({ params }: HikayelerPageProps) {
   return (
     <HikayelerView
       hikayeler={hikayeler}
-      lang={lang} />
+      lang={lang}
+      path="hikaye" />
   )
 }

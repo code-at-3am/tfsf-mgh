@@ -3,7 +3,7 @@ import hikayeler from "@/data/hikayeler.json" with {type: 'json'};
 import TemaView from "@/views/temalistesi";
 import { Lang } from "@/common/types";
 
-interface TemaListesiPageProps {
+interface PageProps {
   params: Promise<{ lang: Lang, slug: string }>
 }
 
@@ -13,7 +13,7 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function TemaListesiPage({ params }: TemaListesiPageProps) {
+export default async function Page({ params }: PageProps) {
   const { lang, slug } = await params
   const hikayeDataList = hikayeler.filter(hikaye => hikaye.tema == slug)
   const title = temalar[0][lang].find(tema => tema.klasor == slug)?.adi ?? ''

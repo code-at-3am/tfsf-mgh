@@ -7,12 +7,9 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return ['tr', 'en'].flatMap(lang => {
-    return hikayeler.map((hikaye) => ({
-      slug: hikaye.url,
-      lang: lang
-    }))
-  })
+  return hikayeler.map(hikaye => ({
+    slug: hikaye.url
+  }))
 }
 
 export default async function Page({ params }: PageProps) {
@@ -23,16 +20,11 @@ export default async function Page({ params }: PageProps) {
     return null
   }
 
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/assets/hikayeler/${hikayeData.tema}/${hikayeData.folder}/hikaye.json`)
-    const data: HikayeDetayLang[] = await response.json()
-    const hikaye = data[0][lang][0]
+  const response = await import(`../../../../../../../public/assets/hikayeler/${hikayeData.tema}/${hikayeData.folder}/hikaye.json`)
+  const data: HikayeDetayLang[] = response.default
+  const hikaye = data[0][lang][0]
 
-    return (
-      <HikayeView hikaye={hikaye} />
-    )
-  } catch (error) {
-    console.log('HATA BURDAAA,', error)
-  }
-  return null
+  return (
+    <HikayeView hikaye={hikaye} />
+  )
 }

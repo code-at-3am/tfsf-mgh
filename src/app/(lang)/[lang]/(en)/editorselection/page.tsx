@@ -3,22 +3,17 @@ import EditorSeckisi from "@/views/editor-seckisi"
 import { Metadata } from "next"
 import hikayelerData from "@/data/editorsecimi.json" with {type: 'json'};
 
-interface EditorsSelectionPageProps {
+export const metadata: Metadata = {
+  title: "Editor Selection",
+}
+
+interface PageProps {
   params: Promise<{ lang: Lang }>
 }
 
-export const metadata: Metadata = {
-  title: "Editor Selection - MGH Project",
-}
-
-export default async function EditorsSelectionPage({ params }: EditorsSelectionPageProps) {
+export default async function Page({ params }: PageProps) {
   const { lang } = await params
-  const hikayeler = hikayelerData as Hikaye[]
-
-  if (lang != 'en') {
-    return null
-  }
-  
+  const hikayeler = hikayelerData as Hikaye[]  
   return (
     <EditorSeckisi
       hikayeler={hikayeler}

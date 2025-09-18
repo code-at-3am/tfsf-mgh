@@ -2,21 +2,16 @@ import { Lang } from "@/common/types"
 import Hakkinda from "@/views/hakkinda"
 import { Metadata } from "next"
 
-interface AboutPageProps {
+export const metadata: Metadata = {
+  title: "About Project",
+}
+
+interface PageProps {
   params: Promise<{ lang: Lang }>
 }
 
-export const metadata: Metadata = {
-  title: "About Project - MGH Project",
-}
-
-export default async function AboutPage({params}: AboutPageProps) {
+export default async function Page({ params }: PageProps) {
   const { lang } = await params
-
-  if (lang != 'en') {
-    return null
-  }
-
   return (
     <Hakkinda lang={lang} />
   )

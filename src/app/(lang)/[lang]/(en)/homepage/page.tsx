@@ -2,17 +2,20 @@ import { Banner, Lang, TemaLang } from "@/common/types";
 import Anasayfa from "@/views/anasayfa";
 import bannersData from "@/data/banners.json" with {type: 'json'};
 import themesData from "@/data/temalar.json" with {type: 'json'};
+import { Metadata } from "next";
 
-interface HomepagePageProps {
+export const metadata: Metadata = {
+  title: "Homepage",
+}
+
+interface PageProps {
   params: Promise<{ lang: Lang }>
 }
 
-export default async function HomepagePage({ params }: HomepagePageProps) {
-  
+export default async function Page({ params }: PageProps) {
   const { lang } = await params
   const banners = bannersData as Banner[]
   const themes = themesData as TemaLang[]
-
   return (
     <Anasayfa
       lang={lang}

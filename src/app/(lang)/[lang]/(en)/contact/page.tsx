@@ -1,10 +1,16 @@
+import { Lang } from "@/common/types"
+import { Metadata } from "next"
 
-interface ContactPageProps {
-  
+export const metadata: Metadata = {
+  title: "Contact",
 }
 
-export default function ContactPage({}: ContactPageProps) {
+interface PageProps {
+  params: Promise<{ lang: Lang }>
+}
 
+export default async function Page({ params }: PageProps) {
+  const { lang } = await params
   return (
     <></>
   )

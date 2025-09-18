@@ -2,21 +2,16 @@ import { Lang } from "@/common/types";
 import Hakkinda from "@/views/hakkinda";
 import { Metadata } from "next";
 
-interface HakkindaPageProps {
+export const metadata: Metadata = {
+  title: "Proje Hakkında",
+}
+
+interface PageProps {
   params: Promise<{ lang: Lang }>
 }
 
-export const metadata: Metadata = {
-  title: "Proje Hakkında - TFSF Memleketimden Görsel Hikayeler",
-}
-
-export default async function HakkindaPage({params }: HakkindaPageProps) {
+export default async function Page({ params }: PageProps) {
   const { lang } = await params
-
-  if (lang != 'tr') {
-    return null
-  }
-
   return (
     <Hakkinda lang={lang} />
   )

@@ -5,9 +5,10 @@ import Link from "next/link"
 interface HikayelerViewProps {
   hikayeler: Hikaye[]
   lang: Lang
+  path: string
 }
 
-export default function HikayelerView({ hikayeler, lang }: HikayelerViewProps) {
+export default function HikayelerView({ hikayeler, lang, path }: HikayelerViewProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -29,7 +30,7 @@ export default function HikayelerView({ hikayeler, lang }: HikayelerViewProps) {
           {hikayeler.map((data, i) => (
 
             <Link
-              href={`/${lang}/hikaye/${data.url}`}
+              href={`/${lang}/${path}/${data.url}`}
               key={data.id}
               className="group relative /*bg-white*/ rounded-lg shadow-sm3 /*shadow-sm hover:shadow-md*/ transition-all duration-500 overflow-hidden cursor-pointer transform"
             // onClick={() => setSelectedPhoto(photo)}

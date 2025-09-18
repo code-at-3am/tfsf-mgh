@@ -1,24 +1,19 @@
-import { Dernek, Lang } from "@/common/types";
 import { Metadata } from "next";
 import derneklerData from "@/data/dernekler.json" with {type: 'json'};
+import { Dernek, Lang } from "@/common/types";
 import Dernekler from "@/views/dernekler";
 
-interface DerneklerPageProps {
+export const metadata: Metadata = {
+  title: "Katılımcı Dernekler",
+}
+
+interface PageProps {
   params: Promise<{ lang: Lang }>
 }
 
-export const metadata: Metadata = {
-  title: "Katılımcı Dernekler - TFSF Memleketimden Görsel Hikayeler",
-}
-
-export default async function DerneklerPage({ params }: DerneklerPageProps) {
+export default async function Page({ params }: PageProps) {
   const { lang } = await params
   const dernekler = derneklerData as Dernek[]
-
-  if (lang != 'tr') {
-    return null
-  }
-
   return (
     <Dernekler
       dernekler={dernekler}
