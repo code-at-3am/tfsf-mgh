@@ -20,11 +20,16 @@ export default async function Page({ params }: PageProps) {
     return null
   }
 
-  const response = await import(`../../../../../../../public/assets/hikayeler/${hikayeData.tema}/${hikayeData.folder}/hikaye.json`)
+  try {
+    const response = await import(`../../../../../../../public/assets/hikayeler/${hikayeData.tema}/${hikayeData.folder}/hikaye.json`)
   const data: HikayeDetayLang[] = response.default
   const hikaye = data[0][lang][0]
 
   return (
     <HikayeView hikaye={hikaye} />
   )
+  } catch (error) {
+    console.log('BU NE BU SAATTEE EN')
+  }
+  return null
 }
