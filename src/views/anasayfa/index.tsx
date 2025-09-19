@@ -119,10 +119,15 @@ function SwiperComp({ banners, lang }: { banners: Banner[], lang: Lang }) {
 }
 
 function FotoItem({ data, lang }: { data: any, lang: Lang }) {
+  const path = lang == 'tr'
+    ? 'temalistesi'
+    : lang == 'en'
+      ? 'themelist'
+      : ''
 
   return (
     <Link
-      href={`/${lang}/temalistesi/${data.klasor}`}
+      href={`/${lang}/${path}/${data.klasor}`}
       key={data.klasor}
       className="group relative /*bg-white*/ rounded-lg shadow-sm3 /*shadow-sm hover:shadow-md*/ transition-all duration-500 overflow-hidden cursor-pointer transform"
     >
