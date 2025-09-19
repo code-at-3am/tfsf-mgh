@@ -109,8 +109,12 @@ function SwiperComp({ banners, lang }: { banners: Banner[], lang: Lang }) {
         <SwiperSlide key={banner.url} className="w-full" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div className="flex justify-between">
             <div className="flex justify-center grow">
-              {/* <img src={`/assets/banners/${lang}/${banner.dosya}`} /> */}
-              <img src={`https://d1zgytwt7cl79p.cloudfront.net/banners/${lang}/${banner.dosya}`} />
+              <Image
+                width={1200}
+                height={400}
+                alt={banner.dosya}
+                src={`https://d1zgytwt7cl79p.cloudfront.net/banners/${lang}/${banner.dosya}`}
+                className="w-full h-full object-cover" />
             </div>
           </div>
         </SwiperSlide>

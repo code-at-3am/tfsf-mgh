@@ -9,6 +9,12 @@ interface TemaViewProps {
 }
 
 export default function TemaView({ hikayeler, lang, title }: TemaViewProps) {
+  const path = lang == 'tr'
+    ? 'hikaye'
+    : lang == 'en'
+      ? 'story'
+      : ''
+  const adiLang = `adi${lang.toUpperCase()}` as 'adiEN' | 'adiTR'
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -28,7 +34,7 @@ export default function TemaView({ hikayeler, lang, title }: TemaViewProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {hikayeler.map(hikaye => (
             <Link
-              href={`/${lang}/hikaye/${hikaye.url}`}
+              href={`/${lang}/${path}/${hikaye.url}`}
               key={hikaye.id}
               className="group relative /*bg-white*/ rounded-lg shadow-sm3 /*shadow-sm hover:shadow-md*/ transition-all duration-500 overflow-hidden cursor-pointer transform"
             >
@@ -39,8 +45,7 @@ export default function TemaView({ hikayeler, lang, title }: TemaViewProps) {
                   priority
                   sizes="100%"
                   src={`https://d1zgytwt7cl79p.cloudfront.net/tumhikayeler/${hikaye.tema}/${hikaye.folder}/thumb/${hikaye.thumb}`}
-                  // @ts-ignore:next-line
-                  alt={hikaye[`adi${lang.toUpperCase()}`]}
+                  alt={hikaye[adiLang]}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
@@ -51,8 +56,7 @@ export default function TemaView({ hikayeler, lang, title }: TemaViewProps) {
               {/* Card Content */}
               <div className="py-2">
                 <h3 className="font-medium text-gray-900 text-lg line-clamp-2 group-hover:text-black transition-colors">
-                  {/* @ts-ignore:next-line */}
-                  {hikaye[`adi${lang.toUpperCase()}`]}
+                  {hikaye[adiLang]}
                 </h3>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
