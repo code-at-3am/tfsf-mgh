@@ -135,7 +135,8 @@ function FotoItem({ data, lang }: { data: any, lang: Lang }) {
       <div className="relative aspect-[3/2] overflow-hidden rounded-lg">
         <Image
           fill
-          src={`/assets/hikayeler/${data.klasor}/${data.gorseller[0].gorsel}`}
+          // src={`/assets/hikayeler/${data.klasor}/${data.gorseller[0].gorsel}`}
+          src={`https://tfsf-mgh.s3.eu-west-1.amazonaws.com/tumhikayeler/${data.klasor}/${data.gorseller[0].gorsel}`}
           alt={data.adi}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
