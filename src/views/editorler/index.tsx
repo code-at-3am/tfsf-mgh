@@ -132,7 +132,7 @@ function Editor1({ lang }: { lang: Lang }) {
           </div>
           <div className="flex items-center justify-center md:justify-end">
             <div className="w-[300px] h-[300px] rounded-full overflow-hidden">
-              <img src="https://mgh.tfsf.org.tr/img/aykan_ozener.jpg" width="400" />
+              <img src="/img/aykan_ozener.jpg" width="400" />
             </div>
           </div>
         </div>
@@ -157,7 +157,7 @@ function Editor1({ lang }: { lang: Lang }) {
           </div>
           <div className="flex items-center justify-center md:justify-end">
             <div className="w-[300px] h-[300px] rounded-full overflow-hidden">
-              <img src="https://mgh.tfsf.org.tr/img/aykan_ozener.jpg" width="400" />
+              <img src="/img/aykan_ozener.jpg" width="400" />
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@ function Editor2({ lang }: { lang: Lang }) {
           </div>
           <div className="flex items-center justify-center md:justify-end">
             <div className="w-[300px] h-[300px] rounded-full overflow-hidden">
-              <img src="https://mgh.tfsf.org.tr/img/ozcanyurdalan.jpg" width="400" className="-translate-y-5" />
+              <img src="/img/ozcanyurdalan.jpg" width="400" className="-translate-y-5" />
             </div>
           </div>
         </div>

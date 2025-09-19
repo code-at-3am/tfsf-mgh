@@ -37,7 +37,7 @@ export default function EditorSeckisi({ hikayeler, lang }: EditorSeckisiProps) {
               <div className="relative aspect-[3/2] overflow-hidden rounded-lg">
                 <Image
                   fill
-                  src={`/assets/hikayeler/${data.tema}/${data.folder}/thumb/${data.thumb}`}
+                  src={`https://d1zgytwt7cl79p.cloudfront.net/tumhikayeler/${data.tema}/${data.folder}/thumb/${data.thumb}`}
                   // @ts-ignore:next-line
                   alt={data[`adi${lang.toUpperCase()}`]}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

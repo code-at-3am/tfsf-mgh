@@ -109,7 +109,8 @@ function SwiperComp({ banners, lang }: { banners: Banner[], lang: Lang }) {
         <SwiperSlide key={banner.url} className="w-full" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div className="flex justify-between">
             <div className="flex justify-center grow">
-              <img src={`/assets/banners/${lang}/${banner.dosya}`} />
+              {/* <img src={`/assets/banners/${lang}/${banner.dosya}`} /> */}
+              <img src={`https://d1zgytwt7cl79p.cloudfront.net/banners/${lang}/${banner.dosya}`} />
             </div>
           </div>
         </SwiperSlide>
@@ -135,8 +136,8 @@ function FotoItem({ data, lang }: { data: any, lang: Lang }) {
       <div className="relative aspect-[3/2] overflow-hidden rounded-lg">
         <Image
           fill
-          // src={`/assets/hikayeler/${data.klasor}/${data.gorseller[0].gorsel}`}
-          src={`https://tfsf-mgh.s3.eu-west-1.amazonaws.com/tumhikayeler/${data.klasor}/${data.gorseller[0].gorsel}`}
+          // src={`/assets/tumhikayeler/${data.klasor}/${data.gorseller[0].gorsel}`}
+          src={`https://d1zgytwt7cl79p.cloudfront.net/tumhikayeler/${data.klasor}/${data.gorseller[0].gorsel}`}
           alt={data.adi}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />

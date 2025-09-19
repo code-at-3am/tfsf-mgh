@@ -66,7 +66,7 @@ export default function HikayeView({ hikaye }: HikayeViewProps) {
             <Image
               width={840}
               height={560}
-              src={`/assets/hikayeler/${hikaye.galeri[0].big}`}
+              src={`https://d1zgytwt7cl79p.cloudfront.net/tumhikayeler/${hikaye.galeri[0].big}`}
               alt={hikaye.adi}
               className="w-full h-auto object-cover sm:rounded-lg shadow-lg"
             />
@@ -110,7 +110,6 @@ export default function HikayeView({ hikaye }: HikayeViewProps) {
         </div>
       )} */}
 
-      {/* {fullscreen && ( */}
       <FullScreen
         onChange={reportChange}
         handle={handle}
@@ -124,7 +123,6 @@ export default function HikayeView({ hikaye }: HikayeViewProps) {
           <Gallery hikayeDetay={hikaye} onClose={handleExitFullScreen} />
         </div>
       </FullScreen>
-      {/* )}  */}
     </>
   )
 }

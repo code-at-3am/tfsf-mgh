@@ -21,13 +21,13 @@ export default async function Page({ params }: PageProps) {
   }
 
   try {
-    const response = await import(`../../../../../../../public/assets/hikayeler/${hikayeData.tema}/${hikayeData.folder}/hikaye.json`)
-  const data: HikayeDetayLang[] = response.default
-  const hikaye = data[0][lang][0]
+    const response = await import(`@/data/tumhikayeler/${hikayeData.tema}/${hikayeData.folder}/hikaye.json`)
+    const data: HikayeDetayLang[] = response.default
+    const hikaye = data[0][lang][0]
 
-  return (
-    <HikayeView hikaye={hikaye} />
-  )
+    return (
+      <HikayeView hikaye={hikaye} />
+    )
   } catch (error) {
     console.log('BU NE BU SAATTEE EN')
   }

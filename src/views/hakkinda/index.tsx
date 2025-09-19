@@ -23,7 +23,7 @@ export default function Hakkinda({ lang }: HakkindaProps) {
         <div className="[&>p]:mt-4">
           <div className="max-w-full pl-0 md:pl-10 pb-6 md:float-right flex justify-center">
             <div className="w-[400px] max-w-full aspect-square rounded-full overflow-hidden">
-              <img src="https://mgh.tfsf.org.tr/img/sefaulukan.jpg" className="" />
+              <img src="/img/sefaulukan.jpg" className="" />
             </div>
           </div>
           <Content lang={lang} />
