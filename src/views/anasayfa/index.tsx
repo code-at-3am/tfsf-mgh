@@ -107,7 +107,7 @@ function SwiperComp({ banners, lang }: { banners: Banner[], lang: Lang }) {
     >
       {banners && banners.map(banner => (
         <SwiperSlide key={banner.url} className="w-full" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div className="flex justify-between">
+          <div className="flex justify-between w-full">
             <div className="flex justify-center grow">
               <Image
                 width={1200}

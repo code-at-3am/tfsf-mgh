@@ -5,9 +5,13 @@ const nextConfig: NextConfig = {
   images:{
     remotePatterns: [
       new URL('https://tfsf-mgh.s3.eu-west-1.amazonaws.com/**'),
-      new URL('https://d1zgytwt7cl79p.cloudfront.net/**')
-    ]
-  }
+      new URL('https://d1zgytwt7cl79p.cloudfront.net/**'),
+      new URL('https://mgh.codeat3am.com/**')
+    ],
+    unoptimized: true
+  },
+  output: 'export',
+  trailingSlash: true
 };
 
 export default nextConfig;
