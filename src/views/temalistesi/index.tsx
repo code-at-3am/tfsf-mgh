@@ -44,7 +44,7 @@ export default function TemaView({ hikayeler, lang, title }: TemaViewProps) {
                   fill
                   priority
                   sizes="100%"
-                  src={`https://d1zgytwt7cl79p.cloudfront.net/tumhikayeler/${hikaye.tema}/${hikaye.folder}/thumb/${hikaye.thumb}`}
+                  src={`/assets/tumhikayeler/${hikaye.tema}/${hikaye.folder}/thumb/${hikaye.thumb}`}
                   alt={hikaye[adiLang]}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

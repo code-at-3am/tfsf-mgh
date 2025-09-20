@@ -70,7 +70,7 @@ export default function Gallery({ hikayeDetay, onClose }: GalleryProps) {
               <SwiperSlide className="w-fit" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div className="flex justify-between">
                   <div className="flex justify-center px-4 grow">
-                    <img src={`https://d1zgytwt7cl79p.cloudfront.net/tumhikayeler/${image.big}`} />
+                    <img src={`/assets/tumhikayeler/${image.big}`} />
                   </div>
                 </div>
               </SwiperSlide>
@@ -103,7 +103,7 @@ export default function Gallery({ hikayeDetay, onClose }: GalleryProps) {
           <div className="grow overflow-x-auto flex items-center justify-center h-full max-h-full py-1 px-2 gap-1">
             {hikayeDetay?.galeri && hikayeDetay.galeri.map((image, i) => (
               <div key={image.thumb} className={`flex h-full min-w-fit cursor-pointer ${activeIndex == i ? 'opacity-100 border-b-2 border-b-white' : 'opacity-60'} hover:opacity-100`} onClick={() => swiperRef.current?.slideTo(i)}>
-                <img src={`https://d1zgytwt7cl79p.cloudfront.net/tumhikayeler/${image.thumb}`} className="h-[50px]" />
+                <img src={`/assets/tumhikayeler/${image.thumb}`} className="h-[50px]" />
               </div>
             ))}
           </div>

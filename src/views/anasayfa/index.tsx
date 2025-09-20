@@ -113,7 +113,7 @@ function SwiperComp({ banners, lang }: { banners: Banner[], lang: Lang }) {
                 width={1200}
                 height={400}
                 alt={banner.dosya}
-                src={`https://d1zgytwt7cl79p.cloudfront.net/banners/${lang}/${banner.dosya}`}
+                src={`/assets/banners/${lang}/${banner.dosya}`}
                 className="w-full h-full object-cover" />
             </div>
           </div>
@@ -141,7 +141,7 @@ function FotoItem({ data, lang }: { data: any, lang: Lang }) {
         <Image
           fill
           // src={`/assets/tumhikayeler/${data.klasor}/${data.gorseller[0].gorsel}`}
-          src={`https://d1zgytwt7cl79p.cloudfront.net/tumhikayeler/${data.klasor}/${data.gorseller[0].gorsel}`}
+          src={`/assets/tumhikayeler/${data.klasor}/${data.gorseller[0].gorsel}`}
           alt={data.adi}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />

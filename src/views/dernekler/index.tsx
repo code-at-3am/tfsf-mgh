@@ -32,7 +32,7 @@ export default function Dernekler({ dernekler, lang }: DerneklerProps) {
                 <div className="relative aspect-[3/2] overflow-hidden">
                   <Image
                     fill
-                    src={`https://d1zgytwt7cl79p.cloudfront.net/dernekler/${data.logo}`}
+                    src={`/assets/dernekler/${data.logo}`}
                     alt={data.adi}
                     className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                   />

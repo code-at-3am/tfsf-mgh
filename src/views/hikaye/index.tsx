@@ -66,7 +66,7 @@ export default function HikayeView({ hikaye }: HikayeViewProps) {
             <Image
               width={840}
               height={560}
-              src={`https://d1zgytwt7cl79p.cloudfront.net/tumhikayeler/${hikaye.galeri[0].big}`}
+              src={`/assets/tumhikayeler/${hikaye.galeri[0].big}`}
               alt={hikaye.adi}
               className="w-full h-auto object-cover sm:rounded-lg shadow-lg"
             />
